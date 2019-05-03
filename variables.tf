@@ -1,7 +1,10 @@
 variable "vpc_id" {
   description = "ID of your VPC."
 }
-variable "project" {}
+
+variable "project" {
+  description = "Project tag"
+}
 
 locals {
   vpc_id  = "${var.vpc_id}"
