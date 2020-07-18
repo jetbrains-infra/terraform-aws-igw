@@ -3,11 +3,15 @@ Terraform module to create internet gateway.
 
 ## Usage
 
-```
-module "igw" {
+```hcl
+module "internet_gateway" {
   source  = "github.com/jetbrains-infra/terraform-aws-igw"
-  vpc_id  = "${local.vpc_id}" // required
-  project = "DB" // required
+  vpc_id  = module.vpc.id // required
+  tags    = {
+    Owner    = "Don John",
+    Project  = "Alice",
+    Customer = "Umbrella Corp."
+  }
 }
 ```
 
